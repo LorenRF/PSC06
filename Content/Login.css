@@ -72,7 +72,7 @@
         font-weight: 500;
     }
 
-#loginbutton {
+.loginbtn {
     z-index: 2;
     position: relative;
     width: 100%;
@@ -87,9 +87,9 @@
     cursor: pointer;
 }
 
-    #loginbutton:hover {
-        background-color: rgb(126, 84, 255);
-    }
+#loginbutton:hover {
+    background-color: rgb(126, 84, 255);
+}
 
 .loginforgotLink {
     z-index: 2;
