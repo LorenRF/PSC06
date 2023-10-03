@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBAutosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DBAutos.dbo.mESTATUS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="mESTATUS">
+    <Key>
+      <PropertyRef Name="IDestatus" />
+    </Key>
+    <Property Name="IDestatus" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="USER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="PassWord" Type="nvarchar" MaxLength="50" />
+    <Property Name="Edad" Type="int" />
+    <Property Name="idEstatus" Type="int" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="DBAutosModelStoreContainer">
+    <EntitySet Name="USER" EntityType="Self.USER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mESTATUS" EntityType="Self.mESTATUS" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [mESTATUS].[IDestatus] AS [IDestatus], 
+    [mESTATUS].[Descripcion] AS [Descripcion]
+    FROM [dbo].[mESTATUS] AS [mESTATUS]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
